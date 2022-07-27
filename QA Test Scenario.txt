@@ -1,4 +1,4 @@
-Production	FundEx						
+Name :	FundEx						
 URL :	https://fundex.id/						
 Version Environment :	Production						
 Author :	Fahmi Idris						
