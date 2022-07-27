@@ -1,0 +1,54 @@
+Production	FundEx						
+URL :	https://fundex.id/						
+Version Environment :	Production						
+Author :	Fahmi Idris						
+Tester :	Fahmi Idris						
+							
+								Total Passed :	6	
+Created At :	Monday, 25 July 2022				Total Failed :	5	
+Last Modified :	Wednesday, 27 July 2022				Total Uncheck :	0	
+							
+							
+Scenario Description : 	Fundex as a securities crowdfunding platform must look credible. Therefore, i try to check a quality aspect of Register Page, Login Page, Forgot Password Page, System Response of Mailicious Activity, Wording at Landing Page and Wording at Privacy Policy Page. 						
+							
+No	ID Scenario	Scenario		Number of Scenario	Test Case with BDD									Expected Result											Result	
+
+1	FUN-TEST-1	User sign up at Register Page	1	1. Given user open https://fundex.id/auth/register						User register successfully and could start to investing. 					Passed	
+								2. When user sign up as investor with valid data. User redirecting to Investor Terms and Condition Page.			
+								3. When user agree with the terms. User redirecting to upload Administrative Document (KTP, NPWP, KYC, etc)			
+								4. When user uploaded the files. Fundex will verification it.			
+								5. Then the verification is success. User could start to investing.			
+	FUN-TEST-2					2	1. Given user open https://fundex.id/auth/register						User data validation done on the register page.							Failed	
+								2. When user sign up as investor with invalid data (email was registered or email joking like 123@123). User redirecting to Investor Terms and Condition Page.			
+								3. When user agree with the terms. User redirecting Register Page			
+								4. Then system notifies that the email already exists or the email format is incorrect			
+2	FUN-TEST-3	User login at Login Page	1	1. Given user open https://fundex.id/auth/login	User login successfully and will look the dashboard.	 											Passed	
+								2. When user sign in with valid data. 								User redirecting to OTP Verification Page			
+								3. When user input valid OTP			
+								4. Then user will see the Dashboard Page			
+	FUN-TEST-4					2	1. Given user open https://fundex.id/auth/login							User login is fail and will look text, "Kode OTP tidak valid". 					Passed	
+								2. When user sign in with valid data. User redirecting to OTP Verification Page			
+								3. When user input invalid OTP			
+								4. Then user look red text, "Kode OTP tidak valid"			
+	FUN-TEST-5					3	1. Given user open https://fundex.id/auth/login							User forbidden to do suspicious action								Passed	
+								2. When user sign in with valid data. User redirecting to OTP Verification Page			
+								3. When user repeatedly input invalid OTP or repeatedly click "Verifikasi" button.			
+								4. Then system will locked an account for 5 minutes.			
+3	FUN-TEST-6	Check Wording at Landing Page	1	1. Given user open https://fundex.id/								The year of copyright must follow current year							Failed	
+								2. When user scroll to footer section			
+								3. Then user find a word "© 2020 Fundex.id"			
+4	FUN-TEST-7	Check Wording at Privacy Policy	1	1. Given user open https://fundex.id/privacy-policy						The text is loaded properly.									Failed	
+								2. When user jump into Pengungkapan dan Pembukaan Akses section, and look at point "iv".			
+								3. Then user find text "privacy_policy.points[4].points[0].points[3]"			
+5	FUN-TEST-8	System Response to Malicious Act 1	1. Given user open https://fundex.id/business/detail/65						User redirecting to Not Found page								Passed	
+								2. When user troll the url with adding symbol ( ; )			
+								3. Then user redirecting to Not Found page			
+6	FUN-TEST-9					2	1. Given user open https://fundex.id/business/detail/65						User redirecting to Not Found page								Failed	
+								2. When user troll the url with adding symbol ( ' )			
+								3. Then user redirecting to Internal Server Error			
+7	FUN-TEST-10	User forgot password		1	1. Given user open https://fundex.id/auth/forget-password					User get notification, link for reset password was sent by email. And the email, really exist.	Passed	
+								2. When User input valid email, user get notification, "Email pengaturan berhasil dikirim".			
+								3. Then user check email and found the email with title "Reset Password Link"			
+8	FUN-TEST-11					2	1. Given user open https://fundex.id/auth/forget-password					User get notification, email not found at the database. And the email, doesn't exist.		Failed	
+								2. When User input invalid email, user get notification, "Email pengaturan berhasil dikirim".			
+								3. Then user check email and the email with title "Reset Password Link" is not found.			

@@ -1,0 +1,40 @@
+QA Test Report
+
+Created at : Monday, 25 July 2022
+Updated at : Wednesday, 27 July 2022
+
+Result :
+	Total Scenario : 11
+	Passed : 6
+	Failed : 5
+
+	Priority : 
+	Immediate : 0
+	High : 0
+	Medium : 4
+	Low : 1
+
+	Severity :
+	Critical : 0
+	Major : 0
+	Moderate : 3
+	Low : 2
+	
+Status :
+	Open : 5
+	Fixing : 0
+	Re-testing : 0
+	Close : 0
+
+No | ID Scenario | Scenario | Data | Expected Result | Result | Severity | Priority | Status | Report Date | Close Date | Tester	
+1 | FUN-TEST-1 | User sign up at Register Page | Valid Data | Register successfully and user will start to investing | Passed | - | - | - | - | - | Fahmi Idris	
+2 | FUN-TEST-2 | User sign up at Register Page | Invalid Data | User shouldn't redirect to Agreement Page | Message error must be display at Register Page | Failed | Moderate | Medium | Open | 25/07/2022 | - | Fahmi Idris	
+3 | FUN-TEST-3 | User login at Login Page | Valid Data | Login successfully and user will see a dashboard page | Passed | - | - | - | - | - | Fahmi Idris
+4 | FUN-TEST-4 | User login at Login Page | Invalid OTP | User can't login | Passed | - | - | - | - | - | Fahmi Idris	
+5 | FUN-TEST-5 | User login at Login Page | Invalid OTP repeatedly | An account will be locked by the system until 5 minutes | Passed | - | - | - | - | - | Fahmi Idris	
+6 | FUN-TEST-6 | Checking Wording at Landing Page | © 2020 Fundex.id All Rights Reserved | The year of copyright must be follow recent year | Failed | Low | Medium | Open | 25/07/2022 | - | Fahmi Idris	
+7 | FUN-TEST-7 | Checking Wording at Privacy Policy Page | privacy_policy.points[4].points[0].points[3] | The text is loaded properly | Failed | Low | Low | Open | 26/07/2022 | - | Fahmi Idris	
+8 | FUN-TEST-8 | Checking System Response to Malicious Activity | Symbol ( ; ) | User redirecting to Not Found page | Passed | - | - | - | - | - | Fahmi Idris
+9 | FUN-TEST-9 | Checking System Response to Malicious Activity | Symbol ( ' ) | User redirecting to Not Found page | Failed | Moderate | Medium | Open | 26/07/2022 | - | Fahmi Idris	
+10 | FUN-TEST-10 | User forgot password | Valid Data | User get notification link for reset password was sent by email. And the email, really exist. | Passed | - | - | - | - | - | Fahmi Idris
+11 | FUN-TEST-11 | User forgot password | Invalid Data | User get notification email not found at the database. And the email, doesn't exist.| Failed | Moderate | Medium | Open | 26/07/2022 | - | Fahmi Idris	
