@@ -3,12 +3,12 @@ QA Test Report
 Created at : Monday, 25 July 2022
 Updated at : Wednesday, 27 July 2022
 
-Result :
-	Total Scenario : 11
-	Passed : 6
-	Failed : 5
 
-	Priority : 
+Total Scenario : 11
+Passed : 6
+Failed : 5
+
+Priority : 
 	Immediate : 0
 	High : 0
 	Medium : 4
